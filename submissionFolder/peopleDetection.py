@@ -63,7 +63,7 @@ for i in range(frames):
         # print("the confidence is: ", confidence)
         if (xmax <= top_left[0] or xmin >= bottom_right[0] or
             ymax <= top_left[1] or ymin >= bottom_right[1]):
-            # No intersection, draw the rectangle
+            
             if conf[ix]>0.4:
                 cv2.rectangle(frame, (xmin, ymin), (xmax, ymax), (255, 0, 0), 2)
                 cv2.putText(img=frame, text=str(np.round(conf[ix],2)),
@@ -72,7 +72,7 @@ for i in range(frames):
         else:
 #             tracker.init(frame, bbox)
             cv2.rectangle(frame, (xmin, ymin), (xmax, ymax), (255, 255, 0), 2)
-            cv2.putText(img=frame, text='Casheir_'+str(np.round(conf[ix],2)),
+            cv2.putText(img=frame, text='Cashier_'+str(np.round(conf[ix],2)),
                     org= (xmin,ymin-10), fontFace=cv2.FONT_HERSHEY_TRIPLEX, fontScale=1, color=(255, 0, 0),thickness=2)
             
 #         cv2.rectangle(frame, (xmin, ymin), (xmax, ymax), (255,0,0), 5) # box
